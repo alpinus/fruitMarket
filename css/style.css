@@ -26,7 +26,9 @@ change these colors to change overlays
 /*--------------------
 1. General
 --------------------*/
-
+*{
+	font-family: 微软雅黑, Arial, sans-serif;
+}
 body {
 	margin: 0px;
 	font-family: "Open Sans", Sans-serif;
@@ -362,7 +364,7 @@ header {
 .section-cta {
 	padding: 40px 0;
 	color: #fff;
-	background-color: #fcbe03;
+	background-color: #00b066;
 }
 
 .section-cta h2 {
