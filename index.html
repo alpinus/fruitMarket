@@ -62,7 +62,9 @@
 	<script type="text/javascript">
 		var my_time;
 		$(document).ready(function() {
-		  pageScroll();
+			if(true){
+		  		pageScroll();
+		  	}
 		  $("#contain").mouseover(function() {
 		    clearTimeout(my_time);
 		  }).mouseout(function() {
@@ -176,21 +178,32 @@
 							<h2>最新报价</h2>
 						</div>
 						<div>
-							<table>
-								<thead class="price-head">
+							<table style="width: 100%">
+								<thead class="price-head" style="text-align: center;">
 							      <tr>      
-							        <th>品名</th>
-							        <th>最低价</th>
-							        <th>平均价</th>
-							        <th>最高价</th>
-							        <th>规格</th>
-							        <th>单位</th>
-							        <th>发布日期</th>
+							        <th style="width: 30%">品名</th>
+							        <th style="width: 10%">最低价</th>
+							        <th style="width: 10%">平均价</th>
+							        <th style="width: 10%">最高价</th>
+							        <th style="width: 10%">规格</th>
+							        <th style="width: 10%">单位</th>
+							        <th style="width: 20%">发布日期</th>
 							      </tr>
 							    </thead>
 							</table>
 							<div id="contain">
 							<table border="0" id="table_scroll">
+								<thead style="display: none;" class="price-head">
+							      <tr>      
+							        <th style="width: 30%">品名</th>
+							        <th style="width: 10%">最低价</th>
+							        <th style="width: 10%">平均价</th>
+							        <th style="width: 10%">最高价</th>
+							        <th style="width: 10%">规格</th>
+							        <th style="width: 10%">单位</th>
+							        <th style="width: 20%">发布日期</th>
+							      </tr>
+							    </thead>
 							    <tbody>
 							      <tr class="tr1">
 							        <td>砂糖橘</td>
