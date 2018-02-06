@@ -57,8 +57,139 @@ a:focus, a:hover {
 	outline: none;
 }
 /*-- //Reset-Code --*/
+.light-bg {
+    background-color: #f8f8f8;
+}
+/*价格表*/
+.price-head{
 
+        }
+        .price-head th{
+            padding: 10px;
+            background-color: #ff7f00;
+            color: #fff;
+        }
+        #contain {
+          height: 300px;
+          overflow-y: scroll;
+        }
+        #table_scroll {
+          width: 100%;
+          margin-top: 100px;
+          margin-bottom: 100px;
+          border-collapse: collapse;
+        }
+        #table_scroll thead th {
+          padding: 10px;
+          background-color: #ea922c;
+          color: #fff;
+        }
+        #table_scroll tbody td {
+          padding: 10px;
+          
+          color: #fff;
+        }
+        #table_scroll tbody .tr1{
+          padding: 10px;
+          background-color: #00b066;
+          color: #fff;
+        }
+        #table_scroll tbody .tr2{
+          padding: 10px;
+          background-color: #34bf49;
+          color: #fff;
+        }
 
+/*--banner--*/
+.banner-top{
+    padding: 0;
+    position:relative;
+}
+.top-banner,.top-banner1,.top-banner2 {
+    position: absolute;
+    top:0;
+    left:0;
+    width:86%;
+    padding: 1.8em;
+    background: #37b48e;
+}
+.top-banner h3,.top-banner1 h3,.top-banner2 h3{
+    color:#fff;
+    font-size: 2em;
+}
+.top-banner h3 span,.top-banner1 h3 span,.top-banner2 h3 span{
+    font-size: 39px;
+    display: block;
+}
+.top-banner1{
+    bottom: 0;
+    top:auto;
+    background: #1da8b1;
+}
+.top-banner2{
+    background: #fd4641;
+}
+/*--banner--*/
+/*footer*/
+footer {
+    padding: 30px;
+    background-color: #333333;  
+}
+
+footer p {
+    color: #B7B7B7;
+    margin: 0;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1.6px;
+}
+
+footer p a {
+    color: #fff;
+}
+
+footer p a span {
+    color: #FCBE03;
+    font-size: 10px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+footer h3{
+    color: #9b9b9b;
+}
+footer a{
+    color:#fff;
+}
+footer a:hover, a:focus {
+    color:#34bf49;
+}
+footer ul {
+    padding-left: 0;
+    padding-top: 10px;
+}
+
+footer ol, ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+footer ul li {
+    list-style: none;
+    padding-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 23px;
+    letter-spacing: 0.2px;
+    color: #000000;
+}
+footer .logo{
+    width: 150px;
+    margin: 20px;
+}
+footer .hotline{
+    color:#fff;
+    margin: 0px 20px;
+}
 /*-- //nav-effect --*/
 .header {
     background:#168eea;

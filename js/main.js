@@ -1,0 +1,1 @@
+//$('price-box').removeEventListener("mousewheel",null);
