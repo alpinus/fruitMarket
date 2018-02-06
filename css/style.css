@@ -130,6 +130,82 @@ a:focus, a:hover {
     background: #fd4641;
 }
 /*--banner--*/
+
+/* Post List
+-------------------------------------------------------*/
+.post-list {
+  position: relative;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ebeeef;
+  margin-bottom: 20px; }
+  .post-list:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 0; }
+  .post-list__img-holder {
+    width: 270px;
+    height: 100%;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 0; }
+    .post-list__img-holder a {
+      display: block;
+      height: 100%; }
+    @media only screen and (max-width: 991px) {
+      .post-list__img-holder {
+        width: 170px; } }
+  .post-list__body {
+    overflow: hidden; }
+  @media only screen and (max-width: 575px) {
+    .post-list__img-holder, .post-list__body {
+      width: 100%; }
+    .post-list__img-holder {
+      float: none;
+      margin-right: 0;
+      margin-bottom: 30px; } }
+
+/* Post List Small
+-------------------------------------------------------*/
+.post-list-small__item {
+  padding: 16px 0 12px;
+  border-bottom: 1px solid #ebeeef; }
+  .post-list-small__item:first-child {
+    padding-top: 0; }
+  .post-list-small__item:last-child {
+    padding-bottom: 0;
+    border-bottom: 0; }
+
+.post-list-small__img-holder {
+  width: 80px;
+  float: left;
+  margin-right: 15px; }
+  @media only screen and (max-width: 575px) {
+    .post-list-small__img-holder {
+      width: 50px; } }
+
+.post-list-small__body {
+  overflow: hidden; }
+
+.post-list-small__entry-title {
+  font-size: 13px;
+  line-height: 1.4;
+  margin-bottom: 0;
+  margin-top: -3px; }
+  .post-list-small__entry-title a {
+    color: #404648; }
+  .post-list-small__entry-title a:hover {
+    text-decoration: underline; }
+
+.post-list-small--border-top {
+  border-top: 1px solid #ebeeef;
+  padding-top: 16px;
+  margin-top: -10px; }
+
+/* Carousel Posts
+-------------------------------------------------------*/
+.owl-item .entry,
+.owl-item .entry__header {
+  margin-bottom: 0; }
 /*footer*/
 footer {
     padding: 30px;
