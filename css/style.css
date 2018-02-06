@@ -1074,3 +1074,70 @@ and (max-width : 480px) {
 .block_popular_stuff li a {display:block; font-size:11px; color:#8a8a8a; line-height:normal; text-align:center;}
 .block_popular_stuff li.comments a {padding-top:16px; background:url(images/icon_comment_1.png) no-repeat center top;}
 .block_popular_stuff li.views a {padding-top:15px; background:url(images/icon_view_1.png) no-repeat center top;}
+/*关于我们*/
+.hvr-shutter-in-vertical {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  background: #efb312;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.banner-silder .hvr-shutter-in-vertical {
+  background: #ffffff;
+}
+.banner-silder .hvr-shutter-in-vertical:before {
+  background: #ffffff;
+}
+.hvr-shutter-in-vertical:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #efb312;
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+  -webkit-transform-origin: 50%;
+  transform-origin: 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  	border-radius: 30px;
+}
+.hvr-shutter-in-vertical:hover, .hvr-shutter-in-vertical:focus, .hvr-shutter-in-vertical:active {
+  color: white;
+}
+.hvr-shutter-in-vertical:hover:before, .hvr-shutter-in-vertical:focus:before, .hvr-shutter-in-vertical:active:before {
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+}
+.more {
+    margin-top: 2.2em;
+}
+.more a {
+	padding: 14px 30px;
+	color: #fff;
+	border-radius: 30px;
+    letter-spacing: 2px;
+	border: none;
+	outline: none;
+    text-transform: uppercase;
+}
+.banner-silder .more a {
+	color: #444;
+}
+.more a:hover {
+	background-color:#34bf49;
+	color: #FFF;
+}
