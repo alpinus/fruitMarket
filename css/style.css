@@ -200,7 +200,196 @@ a:focus, a:hover {
   border-top: 1px solid #ebeeef;
   padding-top: 16px;
   margin-top: -10px; }
+/*新闻列表*/
 
+.all-posts-url {
+  float: right;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-family: "Open Sans", sans-serif;
+  color: #878c8e;
+  font-size: 11px;
+  line-height: 28px; }
+
+.entry {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 30px; }
+  .entry__img-holder {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px; }
+  .entry__img {
+    width: 100%; }
+  .entry__header {
+    margin-bottom: 14px; }
+  .entry__title {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    font-weight: 700; }
+    .entry__title--sm {
+      font-size: 13px; }
+    .entry__title:hover a {
+      text-decoration: underline; }
+  .entry__meta li {
+    display: inline-block;
+    font-size: 12px;
+    color: #adb6b9;
+    font-style: italic;
+    margin-right: 15px; }
+    .entry__meta li:last-child {
+      margin-right: 0; }
+  .entry__meta a {
+    color: #adb6b9; }
+    .entry__meta a:hover {
+      color: #404648; }
+  .entry__meta i {
+    display: inline-block;
+    margin-right: 5px; }
+  .entry__meta-category {
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+    font-weight: 700;
+    color: #0098d0; }
+  .entry__meta-rating i {
+    font-size: 14px;
+    color: #fcb419;
+    margin-right: 2px; }
+  .entry__excerpt p {
+    margin-bottom: 0; }
+
+.entry__meta-category-color {
+  position: relative;
+  padding-left: 16px; }
+  .entry__meta-category-color:before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 5px;
+    height: 11px;
+    left: 0;
+    top: 3px; }
+  .entry__meta-category-color--orange:before {
+    background-color: #fc7e19; }
+  .entry__meta-category-color--green:before {
+    background-color: #2bdd6f; }
+  .entry__meta-category-color--blue:before {
+    background-color: #0098d0; }
+  .entry__meta-category-color--pink:before {
+    background-color: #e1365a; }
+  .entry__meta-category-color--salad:before {
+    background-color: #a3ef41; }
+  .entry__meta-category-color--yellow:before {
+    background-color: #ffe744; }
+  .entry__meta-category-color--light-blue:before {
+    background-color: #00c9d0; }
+  .entry__meta-category-color--violet:before {
+    background-color: #6b41ef; }
+  .entry__meta-category-color--purple:before {
+    background-color: #9826f9; }
+    /*-------------------------------------------------------*/
+/* Post Thumbs
+/*-------------------------------------------------------*/
+.thumb-container {
+  background-color: #f7f7f7;
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0); }
+  .thumb-container img {
+    -webkit-transition: all 0.2s !important;
+    -moz-transition: all 0.2s !important;
+    -ms-transition: all 0.2s !important;
+    -o-transition: all 0.2s !important;
+    transition: all 0.2s !important;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; }
+  .thumb-container:hover img {
+    -webkit-transform: scale(1.1, 1.1);
+    -moz-transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    -o-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1); }
+
+.thumb-text-holder {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  z-index: 3;
+  padding: 0 30px; }
+  .thumb-text-holder .entry__meta-category {
+    display: inline-block;
+    color: #fff;
+    margin-bottom: 10px; }
+  .thumb-text-holder .entry__meta a:hover,
+  .thumb-text-holder .entry__meta a:focus {
+    color: #fff; }
+
+.thumb-url {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2; }
+
+.thumb-entry-title {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 5px; }
+  .thumb-entry-title--sm {
+    font-size: 14px; }
+  .thumb-entry-title:hover a,
+  .thumb-entry-title a:focus {
+    color: #fff; }
+  @media only screen and (max-width: 767px) {
+    .thumb-entry-title {
+      font-size: 20px; } }
+
+.thumb-bg-holder {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  -webkit-transition: all 0.3s !important;
+  -moz-transition: all 0.3s !important;
+  -ms-transition: all 0.3s !important;
+  -o-transition: all 0.3s !important;
+  transition: all 0.3s !important; }
+
+.entry:hover .thumb-bg-holder {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1); }
+
+.thumb-50 {
+  padding-bottom: 50%; }
+
+.thumb-75 {
+  padding-bottom: 75%; }
+
+.thumb-100 {
+  padding-bottom: 100%; }
 /* Carousel Posts
 -------------------------------------------------------*/
 .owl-item .entry,
