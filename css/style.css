@@ -71,13 +71,14 @@ a:focus, a:hover {
         }
         #contain {
           height: 300px;
-          overflow-y: scroll;
+          /*overflow-y: scroll;*/
         }
         #table_scroll {
           width: 100%;
           /*margin-top: 100px;
           margin-bottom: 100px;*/
-          border-collapse: collapse;
+          /*border-collapse: collapse;*/
+
         }
         #table_scroll thead th {
           padding: 10px;
@@ -99,7 +100,30 @@ a:focus, a:hover {
           background-color: #34bf49;
           color: #fff;
         }
-
+/*video*/
+.videobox{
+  padding: 30px 20px;
+  text-align: center;
+}
+.videoimg{
+        position: relative;
+}
+.videoimg .playbtn{
+  position: absolute;
+}
+.videoimg .title{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    z-index: 3;
+    /*padding: 0 30px;*/
+    padding: 10px 10px;
+    color: #fff;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
+    background: #000;
+    opacity: 0.5;
+}
 /*--banner--*/
 .banner-top{
     padding: 0;
