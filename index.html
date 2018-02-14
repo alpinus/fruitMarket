@@ -999,56 +999,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!-- footer -->
 		
-<footer>
-			<div class="container text-center">
-		            <div class="row">
-		                <div class="row-content col-lg-2 col-sm-2 col-xs-6">
-		                    <h3>产业布局</h3>
-		                    <ul>
-		                        <li><a href="#">水果</a></li>
-		                        <li><a href="#">蔬菜</a></li>
-		                        <li><a href="#">干果</a></li>
-		                    </ul>
-		                </div>
-		                <div class="row-content col-lg-2 col-sm-2 col-xs-6">
-		                    <h3>分页浏览</h3>
-		                    <ul>
-		                        <li><a href="#">首页</a></li>
-		                        <li><a href="#">公司简介</a></li>
-		                        <li><a href="#">配套服务</a></li>
-		                        <li><a href="#">新闻中心</a></li>
-		                        <li><a href="#">商家摄影</a></li>
-		                        <li><a href="#">对话总经理</a></li>
-		                    </ul>
-		                </div>
-		                <div class="row-content col-lg-2 col-sm-2 col-xs-6">
-		                    <h3>公司信息</h3>
-		                    <ul>
-		                        <li><a href="#">关于我们</a></li>
-		                        <li><a href="#">发展历程</a></li>
-		                        <li><a href="#">组织架构</a></li>
-		                        <li><a href="#">荣誉资质</a></li>
-		                    </ul>
-		                </div>
-
-		                <div class="row-content col-lg-2 col-sm-2 col-xs-6">
-		                    <h3>友情链接</h3>
-		                    <ul>
-		                        <li><a href="#">中华人民共和国农业部</a></li>
-		                        <li><a href="#">蔬菜中国</a></li>
-		                    </ul>
-
-		                </div>
-		                
-		                <div class="row-content col-lg-4 col-sm-4 col-xs-12">
-		                    <h3>保定联农官方微信</h3>
-		                    <img class="logo" src="images/QRcode.jpg"/>
-		                    <br>
-		                    <span class="hotline">咨询热线：0312-2121167</span>
-		                </div>
-		            </div><!--/.row -->
-			</div>
-		</footer>
+<footer id="footer">
+			
+</footer>
 <!-- //footer -->
 
 <!-- bootstrap-pop-up -->
@@ -1131,6 +1084,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			      //var result = $(data).find("另一个html页面的指定的一部分");
 			      var result = $(data);
 			      //$("#galleryDiv").html(result);
+			    }
+			});
+			$.ajax( {
+			    url: "footer.html", //这里是静态页的地址
+			    type: "GET", //静态页用get方法，否则服务器会抛出405错误
+			    success: function(data){
+			      //var result = $(data).find("另一个html页面的指定的一部分");
+			      var result = $(data);
+			      $("#footer").html(result);
 			    }
 			});
 		 </script>

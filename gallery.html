@@ -1,30 +1,88 @@
-<!-- //gallery -->
-<div class="banner light-bg ">
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<head>
+<link rel="icon" href="favicon.ico">
+<title>保定联农 | 配套服务</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="keywords" content="Fruit land a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+<!-- default css files -->
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="all">
+	<link href="css/JiSlider.css" rel="stylesheet"> <!-- banner slider css file -->
+	<link href="css/simpleLightbox.css" rel="stylesheet" type="text/css" /><!-- gallery css file -->
+	<link rel="stylesheet" href="css/font-awesome.min.css" /><!-- Font awesome css file -->
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<!-- default css files -->
+	
+<!--web font-->
+<!--link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext,vietnamese" rel="stylesheet"-->
+<!--//web font-->
+
+</head>
+
+<!-- Body -->
+<body>
+
+	<!-- header -->
+	<div id="header">
+	</div>
+<div class="about light-bg " id="about">
 	<div class="container ">
-		<h3 class="heading">heading</h3>
-			<!--banner-->
-		<div class="banner">
-			
-			<div class="col-md-4 banner-top">
-				<img src="images/1.jpg" class="img-responsive" >
-				<div class="top-banner">
-					<h3>Contrary to <span>popular belief</span></h3>
-				</div>
-			</div>
-			<div class="col-md-4 banner-top">
-				<img src="images/2.jpg" class="img-responsive" >
-				<div class="top-banner1">
-					<h3>At vero eos   <span>et accusamus</span></h3>
-				</div>
-			</div>
-			<div class="col-md-4 banner-top">
-				<img src="images/3.jpg" class="img-responsive" >
-				<div class="top-banner2">
-					<h3> Corrupti quos <span>dolores et quas </span></h3>
-				</div>
-			</div>
-			<div class="clearfix"> </div>
+		<h2 class="heading">商家摄影</h2>
+		<div class="col-md-12">
 		</div>
-		<!--//banner-->
 	</div>
 </div>
+
+<!-- footer -->
+		
+<footer id="footer">
+</footer>
+<!-- //footer -->
+
+<!-- Default-JavaScript-File -->
+
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script>
+			$.ajax( {
+			    url: "header.html", //这里是静态页的地址
+			    type: "GET", //静态页用get方法，否则服务器会抛出405错误
+			    success: function(data){
+			      //var result = $(data).find("另一个html页面的指定的一部分");
+			      var result = $(data);
+			      console.log(result);
+			      $("#header").html(result);
+			      $(".nav-gallery").addClass("active");
+			    }
+			});
+			$.ajax( {
+			    url: "footer.html", //这里是静态页的地址
+			    type: "GET", //静态页用get方法，否则服务器会抛出405错误
+			    success: function(data){
+			      //var result = $(data).find("另一个html页面的指定的一部分");
+			      var result = $(data);
+			      $("#footer").html(result);
+			    }
+			});
+			
+</script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/lazysizes.min.js"></script>
+<!-- //Default-JavaScript-File -->
+
+
+
+</body>
+<!-- //Body -->
+</html>
