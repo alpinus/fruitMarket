@@ -75,8 +75,8 @@ a:focus, a:hover {
         }
         #table_scroll {
           width: 100%;
-          margin-top: 100px;
-          margin-bottom: 100px;
+          /*margin-top: 100px;
+          margin-bottom: 100px;*/
           border-collapse: collapse;
         }
         #table_scroll thead th {
