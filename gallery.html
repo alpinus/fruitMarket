@@ -27,7 +27,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext,vietnamese" rel="stylesheet"-->
 <!--//web font-->
-
+<style type="text/css">
+.grid{
+	height: 1000px;
+}
+	.grid img2{
+		float: left;
+		display: block;
+		height: auto;
+		display:table-cell;
+		display:inline-block
+	}
+	.clear { 
+clear: both; 
+} 
+</style>
 </head>
 
 <!-- Body -->
@@ -40,6 +54,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container ">
 		<h2 class="heading">商家摄影</h2>
 		<div class="col-md-12">
+			<div class="grid">
+				<img src="images/gallery/1.jpg">
+				<img src="images/gallery/2.jpg">
+				<img src="images/gallery/3.jpg">
+				<img src="images/gallery/4.jpg">
+				<img src="images/gallery/5.jpg">
+				<img src="images/gallery/6.jpg">
+				<img src="images/gallery/7.jpg">
+				<img src="images/gallery/8.jpg">
+				<img src="images/gallery/9.jpg">
+				<img src="images/gallery/10.jpg">
+				<img src="images/gallery/11.jpg">
+			</div>
 		</div>
 	</div>
 </div>
@@ -79,6 +106,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/lazysizes.min.js"></script>
+	<script type="text/javascript" src="js/gridify.js"></script>
+	<script type="text/javascript">
+	$(window).load(function() {
+		var options =
+		{
+			srcNode: 'img',             // grid items (class, node)
+			margin: '20px',             // margin in pixel, default: 0px
+			width: '250px',             // grid item width in pixel, default: 220px
+			max_width: '',              // dynamic gird item width if specified, (pixel)
+			resizable: true,            // re-layout if window resize
+			transition: 'all 0.5s ease' // support transition for CSS3, default: all 0.5s ease
+		}
+		$('.grid').gridify(options);
+	});
+</script>
 <!-- //Default-JavaScript-File -->
 
 

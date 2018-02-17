@@ -1,0 +1,105 @@
+/*--contact-page--*/
+.contact {
+  padding: 5em 0;
+}
+.contact h3 {
+  font-size: 2.5em;
+  color: #6EE0A2;
+  margin-bottom: 1em;
+  font-family: 'Exo-Regular';
+}
+.map {
+  margin:0 0 2em;
+}
+.map iframe {
+  width: 100%;
+  height: 340px;
+}
+.address p {
+  color: #99989B;
+  margin: 0 0 .5em 0;
+  font-size: 1em;
+  line-height:1.8em;
+}
+p.cnt-p {
+  margin-bottom: 1.5em;
+}
+.address a {
+  color: #201F1F;
+  margin: 0 0 .5em 0;
+  font-size: 1em;
+}
+.address a:hover {
+  color: #201F1F;
+  background-color: #E8E582;
+  padding: 1px 5px;
+}
+.contact-form input[type="text"] {
+  display: inline-block;
+  background: none;
+  border: 1px solid #A3A1A1;
+  width: 100%;
+  margin: 0 0 1.5em 0;
+  outline: none;
+  font-size: 1em;
+  color: #555;
+  padding: .8em 1em;
+  -webkit-appearance: none;
+}
+.contact-form input[type="email"] {
+  display: inline-block;
+  background: none;
+  border: 1px solid #A3A1A1;
+  width:  100%;
+  margin: 0 0 1.5em;
+  outline: none;
+  font-size: 1em;
+  color: #555;
+  padding: .8em 1em;
+  -webkit-appearance: none;
+}
+.contact-form textarea {
+  background: none;
+  border: 1px solid #A3A1A1;
+  width: 100%;
+  display: block;
+  height: 12.5em;
+  outline: none;
+  font-size: 1em;
+  color: #555;
+  resize: none;
+  padding: .8em 1em;
+  -webkit-appearance: none;
+}
+.contact-form input[type="submit"] {
+  background: #E1DC7D;
+  border: 1px solid #E1DC7D;
+  padding: .6em 0;
+  width: 35%;
+  margin: 0.5em 18em 0;
+  font-size: 1em;
+  color: #333;
+  font-weight: 400;
+  letter-spacing: 1px;
+  outline: none;
+  transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+  -ms-transition: 0.5s all ease;
+  -webkit-appearance: none;
+}
+.contact-form input[type="submit"]:hover{
+   border:none;
+  border-top: 1px solid #6EE0A2;
+  border-bottom: 1px solid #6EE0A2;
+  background-color: #fff;
+  color: #6EE0A2;
+}
+.contact-grids:nth-child(1) {
+  padding-left: 0;
+}
+.contact-grids:nth-child(2) {
+  padding-right: 0;
+}
+/*--//contact-page--*/

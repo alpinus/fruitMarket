@@ -21,13 +21,81 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link href="css/simpleLightbox.css" rel="stylesheet" type="text/css" /><!-- gallery css file -->
 	<link rel="stylesheet" href="css/font-awesome.min.css" /><!-- Font awesome css file -->
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<!--引用百度地图API-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=37114135b73114cf2c2865ed2e26cd1a"></script>
 <!-- default css files -->
 	
 <!--web font-->
 <!--link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext,vietnamese" rel="stylesheet"-->
 <!--//web font-->
-
+	<style type="text/css">
+		.about p{
+			font-size: 15px;
+		    letter-spacing: .5px;
+		    color: #444;
+		    line-height: 28px;
+		    margin: 2em 0 0;
+		}
+	</style>
+	<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){ 
+      map = new BMap.Map("map"); 
+      map.centerAndZoom(new BMap.Point(115.516084,38.819787),17);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+      var markers = [
+        {content:"",title:"保定联农果品批发市场",imageOffset: {width:0,height:3},position:{lat:38.820363,lng:115.514629}}
+      ];
+      for(var index = 0; index < markers.length; index++ ){
+        var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+        var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
+          imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
+        })});
+        var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+        var opts = {
+          width: 200,
+          title: markers[index].title,
+          enableMessage: false
+        };
+        var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+        marker.setLabel(label);
+        addClickHandler(marker,infoWindow);
+        map.addOverlay(marker);
+      };
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+      map.addControl(navControl);
+      var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+      map.addControl(overviewControl);
+    }
+    var map;
+      initMap();
+  </script>
 </head>
 
 <!-- Body -->
@@ -41,6 +109,108 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container ">
 		<h2 class="heading">关于我们</h2>
 		<div class="col-md-12">
+			<p>&emsp;&emsp;保定联农果品批发市场有限公司于2015年08月04日成立。法定代表人郑得厚,公司经营范围包括：食用农产品批发、零售，自有场地出租等。  </br>&emsp;&emsp;保定联农果品批发市场有限公司直属北京世纪联农商贸有限公司，位于保定市莲池区长城南大街1997号。北京世纪联农商贸有限公司，成立于2005年。我公司固定经营面积达10,000多平方米，季节性临时经营场地达16,000多平方米，创造了多品种销售交易的“清明上河图”。</br>
+  &emsp;&emsp;2015年在京津冀协同发展的背景下，北京新发地、石家庄果品批发市场与保定联农果品批发市场三大板块联动发展，现已完成对果品批发市场的升级改造，2018年上半年将接手大韩蒋蔬菜市场的改造，下半年将开启二期工程。保定联农一直致力于更好的保障丰富保定市民菜篮子的新鲜实惠，促进区域的经济协同发展，并在保定形成农产品流通大市场。
+  我们大手，拉你小手，稳步攀登，共同成长！</p></br></br></br>
+		</div>
+		<div class="row">
+			<div class="col-md-8">
+			<div style="width:200px;height:200px;border:#ccc solid 1px;font-size:12px" id="map"></div>
+			</div>
+			<div class="col-md-4">
+			</div>
+		</div>
+
+
+		<div class="col-md-12">
+			<div class="row row-0-gutter">
+				<!-- start portfolio item -->
+				<div class="col-md-4 col-0-gutter">
+					<div class="ot-portfolio-item">
+						<figure class="effect-bubba">
+							<img src="images/portfolio-1.jpg" alt="img02" class="img-responsive" />
+							<figcaption>
+								<h2>场区鸟瞰</h2>
+								<p>保定联农</p>
+								<a href="#" data-toggle="modal" data-target="#Modal-1">View more</a>
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+				<!-- end portfolio item -->
+				<!-- start portfolio item -->
+				<div class="col-md-4 col-0-gutter">
+					<div class="ot-portfolio-item">
+						<figure class="effect-bubba">
+							<img src="images/portfolio-2.jpg" alt="img02" class="img-responsive" />
+							<figcaption>
+								<h2>市场正门</h2>
+								<p>保定联农</p>
+								<a href="#" data-toggle="modal" data-target="#Modal-2">View more</a>
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+				<!-- end portfolio item -->
+				<!-- start portfolio item -->
+				<div class="col-md-4 col-0-gutter">
+					<div class="ot-portfolio-item">
+						<figure class="effect-bubba">
+							<img src="images/portfolio-3.jpg" alt="img02" class="img-responsive" />
+							<figcaption>
+								<h2>市场门口</h2>
+								<p>保定联农</p>
+								<a href="#" data-toggle="modal" data-target="#Modal-3">View more</a>
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+				<!-- end portfolio item -->
+			</div>
+			<div class="row row-0-gutter">
+				<!-- start portfolio item -->
+				<div class="col-md-4 col-0-gutter">
+					<div class="ot-portfolio-item">
+						<figure class="effect-bubba">
+							<img src="images/portfolio-4.jpg" alt="img02" class="img-responsive" />
+							<figcaption>
+								<h2>市场门口夜景</h2>
+								<p>B保定联农</p>
+								<a href="#" data-toggle="modal" data-target="#Modal-4">View more</a>
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+				<!-- end portfolio item -->
+				<!-- start portfolio item -->
+				<div class="col-md-4 col-0-gutter">
+					<div class="ot-portfolio-item">
+						<figure class="effect-bubba">
+							<img src="images/portfolio-5.jpg" alt="img02" class="img-responsive" />
+							<figcaption>
+								<h2>市场图片</h2>
+								<p>保定联农</p>
+								<a href="#" data-toggle="modal" data-target="#Modal-5">View more</a>
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+				<!-- end portfolio item -->
+				<!-- start portfolio item -->
+				<div class="col-md-4 col-0-gutter">
+					<div class="ot-portfolio-item">
+						<figure class="effect-bubba">
+							<img src="images/portfolio-6.jpg" alt="img02" class="img-responsive" />
+							<figcaption>
+								<h2>市场图片</h2>
+								<p>保定联农</p>
+								<a href="#" data-toggle="modal" data-target="#Modal-2">View more</a>
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+			</div>
+		</div>
 		</div>
 	</div>
 </div>
@@ -50,6 +220,106 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <footer id="footer">
 </footer>
 <!-- //footer -->
+
+		<!-- Modal for portfolio item 1 -->
+		<div class="modal fade" id="Modal-1" tabindex="-1" role="dialog" aria-labelledby="Modal-label-1">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="Modal-label-1">Dean & Letter</h4>
+					</div>
+					<div class="modal-body">
+						<img src="images/portfolio-1.jpg" alt="img01" class="img-responsive" />
+						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
+						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal for portfolio item 2 -->
+		<div class="modal fade" id="Modal-2" tabindex="-1" role="dialog" aria-labelledby="Modal-label-2">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="Modal-label-2">Startup Framework</h4>
+					</div>
+					<div class="modal-body">
+						<img src="images/portfolio-2.jpg" alt="img01" class="img-responsive" />
+						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
+						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal for portfolio item 3 -->
+		<div class="modal fade" id="Modal-3" tabindex="-1" role="dialog" aria-labelledby="Modal-label-3">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="Modal-label-3">Lamp & Velvet</h4>
+					</div>
+					<div class="modal-body">
+						<img src="images/portfolio-3.jpg" alt="img01" class="img-responsive" />
+						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
+						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal for portfolio item 4 -->
+		<div class="modal fade" id="Modal-4" tabindex="-1" role="dialog" aria-labelledby="Modal-label-4">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="Modal-label-4">Smart Name</h4>
+					</div>
+					<div class="modal-body">
+						<img src="images/portfolio-4.jpg" alt="img01" class="img-responsive" />
+						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
+						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal for portfolio item 5 -->
+		<div class="modal fade" id="Modal-5" tabindex="-1" role="dialog" aria-labelledby="Modal-label-5">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="Modal-label-5">Fast People</h4>
+					</div>
+					<div class="modal-body">
+						<img src="images/portfolio-5.jpg" alt="img01" class="img-responsive" />
+						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
+						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
 <!-- Default-JavaScript-File -->
 
