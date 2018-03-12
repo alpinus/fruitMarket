@@ -3,5 +3,6 @@
 文档
 ver1
 assets
-node_modules
+
 ver1
+server/node_modules
