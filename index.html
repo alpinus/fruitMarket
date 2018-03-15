@@ -1124,8 +1124,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			var timer1=window.setInterval(getNextPrise,5000);  	
 		});
 		function getNextPrise(){
-			console.log("get a new prise");
-			addPrise();
+			
+			//$('#prise_table tr:first').remove();
+			$('#prise_table tr:first').fadeOut(function(){
+				$(this).remove();
+				addPrise();
+			})
 		}
 		function addPrise(){
 			//var newPrise=window.createElement("tr");
@@ -1155,7 +1159,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	        +"</tr>");
 	        var $table = $("#usertable");
 	        $table.append($tr);*/
-	        var $tr=$("<tr class='tr1'>"+
+	        var lastCls = $("#prise_table tr:last-child").attr('class');
+	        var cls="tr1";
+	        if(lastCls=="tr1"){
+	        	cls="tr2";
+	        }
+	        console.log("get a new prise"+cls);
+	        var $tr=$("<tr class='"+cls+"'>"+
 	        	"<td>"+"砂11111"+"</td>"+
 	        	"<td>"+"40"+"</td>"+
 	        	"<td>"+"70"+"</td>"+
