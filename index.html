@@ -157,7 +157,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							    </thead>
 							</table>
 							<div id="contain">
-							<table border="0" id="table_scroll">
+							<table border="0" id="prise_table">
 								<thead style="display: none;" >
 							      <tr>      
 							        <th style="width: 20%;text-align: center; ">品名</th>
@@ -1112,15 +1112,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script> 
 <!-- //clients js file -->
 
-<!-- scrolling script -->
-<script type="text/javascript">
-	jQuery(document).ready(function($) {
-		/*$(".scroll").click(function(event){		
-			event.preventDefault();
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-		});*/
-	});
-</script> 
 <!-- //scrolling script -->
 
 <!-- Stars scrolling script -->
@@ -1134,9 +1125,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 		function getNextPrise(){
 			console.log("get a new prise");
+			addPrise();
 		}
 		function addPrise(){
-			
+			//var newPrise=window.createElement("tr");
+			// var $tr = $("<tr id=\'_tr_"+tempRow+"\' class=\'in-opt\'></tr>");
+			//$('#prise_table').tbody.appendChild(tr);
+
+
+			/*<tr class="tr1">
+							        <td>砂糖橘</td>
+							        <td>40</td>
+							        <td>70</td>
+							        <td>100</td>
+							        <td>箱装</td>
+							        <td>箱</td>
+							        <td>2018/1/20</td>			        
+							      </tr>
+
+
+			 var name = $("#name").val();
+	        var email = $("#email").val();
+	        var tel = $("#tel").val();
+	        var $tr = $("<tr>"+
+	        "<td>"+name+"</td>"+
+	        "<td>"+email+"</td>"+
+	        "<td>"+tel+"</td>"+
+	        "<td><a href='deleteEmp?id="+name+"'>删除</a></td>"
+	        +"</tr>");
+	        var $table = $("#usertable");
+	        $table.append($tr);*/
+	        var $tr=$("<tr class='tr1'>"+
+	        	"<td>"+"砂11111"+"</td>"+
+	        	"<td>"+"40"+"</td>"+
+	        	"<td>"+"70"+"</td>"+
+	        	"<td>"+"100"+"</td>"+
+	        	"<td>"+"箱装"+"</td>"+
+	        	"<td>"+"箱"+"</td>"+
+	        	"<td>"+"2018/1/20"+"</td>"+
+	        	"</tr>");
+	        var table=$("#prise_table");
+	        table.append($tr);
 		}
 	</script>
 </body>
