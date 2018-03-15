@@ -1130,22 +1130,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- here stars scrolling icon -->
 	<script type="text/javascript">
 		$(document).ready(function() {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-				};
-			*/
-								
-			$().UItoTop({ easingType: 'easeOutQuart' });
-								
-			});
+			var timer1=window.setInterval(getNextPrise,5000);  	
+		});
+		function getNextPrise(){
+			console.log("get a new prise");
+		}
+		function addPrise(){
+			
+		}
 	</script>
-<!-- //here ends scrolling icon -->
-<!-- //Ends scrolling script -->
-
 </body>
 <!-- //Body -->
 </html>
