@@ -157,7 +157,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							    </thead>
 							</table>
 							<div id="contain">
-							<table border="0" id="table_scroll">
+							<table border="0" id="prise_table">
 								<thead style="display: none;" >
 							      <tr>      
 							        <th style="width: 20%;text-align: center; ">品名</th>
@@ -1112,15 +1112,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script> 
 <!-- //clients js file -->
 
-<!-- scrolling script -->
-<script type="text/javascript">
-	jQuery(document).ready(function($) {
-		/*$(".scroll").click(function(event){		
-			event.preventDefault();
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-		});*/
-	});
-</script> 
 <!-- //scrolling script -->
 
 <!-- Stars scrolling script -->
@@ -1130,6 +1121,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script type="text/javascript" src="js/xml.js"></script>
 	<!-- here stars scrolling icon -->
 	<script type="text/javascript">
+<<<<<<< HEAD
 		var xmlDoc = checkXMLDocObj('prise.xml');//读取到xml文件中的数据
         var a = document.getElementsByTagName("a");//获取所有的A标签
 		$(document).ready(function() {		
@@ -1150,7 +1142,66 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script>
 <!-- //here ends scrolling icon -->
 <!-- //Ends scrolling script -->
+=======
+		$(document).ready(function() {
+			var timer1=window.setInterval(getNextPrise,5000);  	
+		});
+		function getNextPrise(){
+			
+			//$('#prise_table tr:first').remove();
+			$('#prise_table tr:first').fadeOut(function(){
+				$(this).remove();
+				addPrise();
+			})
+		}
+		function addPrise(){
+			//var newPrise=window.createElement("tr");
+			// var $tr = $("<tr id=\'_tr_"+tempRow+"\' class=\'in-opt\'></tr>");
+			//$('#prise_table').tbody.appendChild(tr);
 
+
+			/*<tr class="tr1">
+							        <td>砂糖橘</td>
+							        <td>40</td>
+							        <td>70</td>
+							        <td>100</td>
+							        <td>箱装</td>
+							        <td>箱</td>
+							        <td>2018/1/20</td>			        
+							      </tr>
+>>>>>>> 131af52c250ef5df8a53983c4eeedd5012060e00
+
+
+			 var name = $("#name").val();
+	        var email = $("#email").val();
+	        var tel = $("#tel").val();
+	        var $tr = $("<tr>"+
+	        "<td>"+name+"</td>"+
+	        "<td>"+email+"</td>"+
+	        "<td>"+tel+"</td>"+
+	        "<td><a href='deleteEmp?id="+name+"'>删除</a></td>"
+	        +"</tr>");
+	        var $table = $("#usertable");
+	        $table.append($tr);*/
+	        var lastCls = $("#prise_table tr:last-child").attr('class');
+	        var cls="tr1";
+	        if(lastCls=="tr1"){
+	        	cls="tr2";
+	        }
+	        console.log("get a new prise"+cls);
+	        var $tr=$("<tr class='"+cls+"'>"+
+	        	"<td>"+"砂11111"+"</td>"+
+	        	"<td>"+"40"+"</td>"+
+	        	"<td>"+"70"+"</td>"+
+	        	"<td>"+"100"+"</td>"+
+	        	"<td>"+"箱装"+"</td>"+
+	        	"<td>"+"箱"+"</td>"+
+	        	"<td>"+"2018/1/20"+"</td>"+
+	        	"</tr>");
+	        var table=$("#prise_table");
+	        table.append($tr);
+		}
+	</script>
 </body>
 <!-- //Body -->
 </html>

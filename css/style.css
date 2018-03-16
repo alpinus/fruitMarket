@@ -73,29 +73,29 @@ a:focus, a:hover {
           height: 300px;
           /*overflow-y: scroll;*/
         }
-        #table_scroll {
+        #prise_table {
           width: 100%;
           /*margin-top: 100px;
           margin-bottom: 100px;*/
           /*border-collapse: collapse;*/
 
         }
-        #table_scroll thead th {
+        #prise_table thead th {
           padding: 10px;
           background-color: #ea922c;
           color: #fff;
         }
-        #table_scroll tbody td {
+        #prise_table tbody td {
           padding: 10px;
           
           color: #fff;
         }
-        #table_scroll tbody .tr1{
+        #prise_table tbody .tr1{
           padding: 10px;
           background-color: #00b066;
           color: #fff;
         }
-        #table_scroll tbody .tr2{
+        #prise_table tbody .tr2{
           padding: 10px;
           background-color: #34bf49;
           color: #fff;
