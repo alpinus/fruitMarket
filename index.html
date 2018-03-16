@@ -157,7 +157,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							    </thead>
 							</table>
 							<div id="contain">
-							<table border="0" id="prise_table">
+							<table border="0" id="prise_table" style="height: 400px">
 								<thead style="display: none;" >
 							      <tr>      
 							        <th style="width: 20%;text-align: center; ">品名</th>
@@ -170,15 +170,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							      </tr>
 							    </thead>
 							    <tbody >
-							      <tr class="tr1">
-							        <td>砂糖橘</td>
-							        <td>40</td>
-							        <td>70</td>
-							        <td>100</td>
-							        <td>箱装</td>
-							        <td>箱</td>
-							        <td>2018/1/20</td>			        
-							      </tr>
 							    </tbody>
 							</table>
 						</div>
@@ -1059,7 +1050,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- here stars scrolling icon -->
 	<script type="text/javascript">
 		$(document).ready(function() {
-			var timer1=window.setInterval(getNextPrise,5000); 
+			var timer1=window.setInterval(getNextPrise,3000); 
 			
 			initPriseArr();
 		});
@@ -1068,26 +1059,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		var totalPriseNum;
 		var priseArr=new Array();
 		function initPriseArr(){
-			
-			priseArr.push({name:'水果1',lowPrise:'1',highPrise:'10',package:'散装',unit:'盒',date:'2018-2-2'});
-			priseArr.push({name:'水果1',lowPrise:'1',highPrise:'10',package:'散装',unit:'盒',date:'2018-2-2'});
-			priseArr.push({name:'水果1',lowPrise:'1',highPrise:'10',package:'散装',unit:'盒',date:'2018-2-2'});
-			priseArr.push({name:'水果1',lowPrise:'1',highPrise:'10',package:'散装',unit:'盒',date:'2018-2-2'});
-			priseArr.push({name:'水果1',lowPrise:'1',highPrise:'10',package:'散装',unit:'盒',date:'2018-2-2'});
-			priseArr.push({name:'水果1',lowPrise:'1',highPrise:'10',package:'散装',unit:'盒',date:'2018-2-2'});
-			priseArr.push({name:'水果1',lowPrise:'1',highPrise:'10',package:'散装',unit:'盒',date:'2018-2-2'});
-			priseArr.push({name:'水果1',lowPrise:'1',highPrise:'10',package:'散装',unit:'盒',date:'2018-2-2'});
-			priseArr.push({name:'水果1',lowPrise:'1',highPrise:'10',package:'散装',unit:'盒',date:'2018-2-2'});
-			priseArr.push({name:'水果1',lowPrise:'1',highPrise:'10',package:'散装',unit:'盒',date:'2018-2-2'});
-			priseArr.push({name:'水果1',lowPrise:'1',highPrise:'10',package:'散装',unit:'盒',date:'2018-2-2'});
-			priseArr.push({name:'水果1',lowPrise:'1',highPrise:'10',package:'散装',unit:'盒',date:'2018-2-2'});
-			priseArr.push({name:'水果1',lowPrise:'1',highPrise:'10',package:'散装',unit:'盒',date:'2018-2-2'});
-			priseArr.push({name:'水果1',lowPrise:'1',highPrise:'10',package:'散装',unit:'盒',date:'2018-2-2'});
-			priseArr.push({name:'水果1',lowPrise:'1',highPrise:'10',package:'散装',unit:'盒',date:'2018-2-2'});
-			priseArr.push({name:'水果1',lowPrise:'1',highPrise:'10',package:'散装',unit:'盒',date:'2018-2-2'});
+			priseArr.push({name:'砂糖橘',lowPrise:'40',avgPrise:'70',highPrise:'100',package:'箱装',unit:'箱',date:'2018-1-20'});
+      priseArr.push({name:'南丰蜜桔',lowPrise:'1',avgPrise:'1.15',highPrise:'1.6',package:'散装',unit:'斤',date:'2018-1-20'});
+      priseArr.push({name:'南丰蜜桔',lowPrise:'1',avgPrise:'4',highPrise:'10',package:'散装',unit:'盒',date:'2018-1-20'});
+      priseArr.push({name:'无核蜜桔',lowPrise:'1',avgPrise:'4',highPrise:'10',package:'散装',unit:'盒',date:'2018-1-20'});
+      priseArr.push({name:'芦柑',lowPrise:'1',avgPrise:'4',highPrise:'10',package:'散装',unit:'盒',date:'2018-1-20'});
+      priseArr.push({name:'柚子',lowPrise:'1',avgPrise:'4',highPrise:'10',package:'散装',unit:'盒',date:'2018-1-20'});
+      priseArr.push({name:'柚子',lowPrise:'1',avgPrise:'4',highPrise:'10',package:'散装',unit:'盒',date:'2018-1-20'});
+      priseArr.push({name:'脐橙',lowPrise:'1',avgPrise:'4',highPrise:'10',package:'散装',unit:'盒',date:'2018-1-20'});
+      priseArr.push({name:'冰糖橙',lowPrise:'1',avgPrise:'4',highPrise:'10',package:'散装',unit:'盒',date:'2018-1-20'});
+      priseArr.push({name:'香蕉',lowPrise:'1',avgPrise:'4',highPrise:'10',package:'散装',unit:'盒',date:'2018-1-20'});
+       totalPriseNum=priseArr.length;
 			for(var i=0;i<dispNum;i++){
 				addPrise(priseCurrentID);
+        nextPrise();
 			}
+     
 			 /*th style="width: 20%">品名</th>
 							        <th style="width: 10%">最低价</th>
 							        <th style="width: 10%">平均价</th>
@@ -1102,26 +1089,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			$('#prise_table tr:first').fadeOut(function(){
 				$(this).remove();
 				addPrise(priseCurrentID);
-				//nextPrise();
+				nextPrise();
 				
 			})
 		}
 		function nextPrise(){
-			priseCurrentID++;
+			if(priseCurrentID>=totalPriseNum-1){
+        console.log("current sdfsdf");
+            priseCurrentID=0;
+          }else{
+            priseCurrentID++;
+          }
 		}
 		function addPrise(currentid){
 			var id=currentid;
 			var priseObj=priseArr[id];
-			console.log(priseArr[id].name,"dsfsd");
 			//console.log(priseObj,",priseObj");
-			var lastCls = $("#prise_table tr:last-child").attr('class');
-	        var cls="tr1";
-	        if(lastCls=="tr1"){
-	        	cls="tr2";
-	        }
-	        //priseArr.push({name:'水果1'},{lowPrise:'1'},{highPrise:'10'},{package:'散装'},{unit:'盒'},{date:'2018-2-2'});
-	        var $tr=$("<tr class='"+priseObj.name+"'>"+
+			var lastCls = $("#prise_table tbody tr:last-child").attr('class');
+	   var cls="tr1";
+	   if(lastCls=="tr1"){
+	      	cls="tr2";
+	   }
+	        	var $tr=$("<tr class='"+cls+"'>"+
+	        	"<td>"+priseObj.name+"</td>"+
 	        	"<td>"+priseObj.lowPrise+"</td>"+
+            "<td>"+priseObj.avgPrise+"</td>"+
 	        	"<td>"+priseObj.highPrise+"</td>"+
 	        	"<td>"+priseObj.package+"</td>"+
 	        	"<td>"+priseObj.unit+"</td>"+
@@ -1129,11 +1121,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	        	"</tr>");
 	        var table=$("#prise_table");
 	        table.append($tr);
-	        if(priseCurrentID>totalPriseNum){
-	        	priseCurrentID=0;
-	        }else{
-	        	priseCurrentID++;
-	        }
+	        
 		}
 	</script>
 </body>
