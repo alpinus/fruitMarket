@@ -1127,21 +1127,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script src="js/SmoothScroll.min.js"></script>
 	<script type="text/javascript" src="js/move-top.js"></script>
 	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript" src="js/xml.js"></script>
 	<!-- here stars scrolling icon -->
 	<script type="text/javascript">
-		$(document).ready(function() {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-				};
-			*/
-								
-			$().UItoTop({ easingType: 'easeOutQuart' });
-								
-			});
+		var xmlDoc = checkXMLDocObj('prise.xml');//读取到xml文件中的数据
+        var a = document.getElementsByTagName("a");//获取所有的A标签
+		$(document).ready(function() {		
+			//加载XML文件。
+			var nodes;
+			if(isFirefox=navigator.userAgent.indexOf("Firefox")>0){ // 注意各个浏览器之间的区别
+             nodes = xmlDoc.getElementsByTagName('fruit')[0].childNodes; //读取XML文件中需要显示的数据
+             } 
+             else{
+                nodes = xmlDoc.getElementsByTagName('fruit')[0].children; //读取XML文件中需要显示的数据
+             }
+             console.log(nodes);
+		});
+
+		function addPrise(){
+
+		};
 	</script>
 <!-- //here ends scrolling icon -->
 <!-- //Ends scrolling script -->

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<fruit>
+		<name>苹果</name>
+		<prise>1212</prise>
+	</fruit>
+	<fruit>
+		<name>梨</name>
+		<prise>212</prise>
+	</fruit>
+</root>
