@@ -1123,12 +1123,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		$(document).ready(function() {
 			var timer1=window.setInterval(getNextPrise,5000);  	
 		});
+
 		function getNextPrise(){
 			
 			//$('#prise_table tr:first').remove();
 			$('#prise_table tr:first').fadeOut(function(){
 				$(this).remove();
+				//$('#prise_table').slideUp(10000);
 				addPrise();
+
 			})
 		}
 		function addPrise(){

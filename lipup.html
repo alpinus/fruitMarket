@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml">  
+<head>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<title>jquery table slideUp 兼容table滑动效果</title>  
+<script type="text/javascript" src="../../js/jquery.js"></script>  
+<style type="text/css">  
+.hide {  
+    display: none;  
+}  
+.lc_list{  
+    width:714px;  
+    border-top:1px solid #eeeeee;  
+    border-bottom:1px solid #eeeeee;  
+    overflow:hidden;      
+}  
+.lc_list tr{  
+    padding:6px 0;  
+}  
+.lc_list tr th{  
+    padding:0 0 0 15px;  
+    height:36px;  
+    line-height:36px;  
+    background:#fafafa;  
+    border-bottom:1px solid #eeeeee;  
+    font-size:12px;  
+    color:#999999;  
+    font-weight:normal;  
+    text-align:left;  
+}  
+.lc_list tr td{  
+    padding:6px 0 6px 0;  
+    height:36px;  
+    border-bottom:1px solid #eeeeee;  
+    line-height:36px;  
+    font-size:14px;  
+    color:#0e4f71;  
+    text-align:left;  
+}  
+.lc_list tr td em,.lc_list tr td span{  
+    padding:0 0 0 15px;  
+    height:36px;  
+    width:100%;  
+    display:inline-block;  
+    vertical-align:middle;  
+}  
+.lc_list tr:hover td em,.lc_list tr:hover td span{  
+    background:#ebf1e5;  
+}  
+.lc_list tr:hover td span{  
+    font-size:18px;  
+}  
+.lc_list tr td em:hover{  
+    vertical-align:middle;  
+}  
+.lc_list tr td em a{  
+    color:#0e4f71;  
+    width:53px;  
+    display: inline-block;  
+    height: 20px;  
+    padding: 0 5px;  
+    line-height:20px;  
+    margin-top:7px;  
+}  
+.lc_list tr:hover td em a{  
+    background:red;  
+    color:#ffffff;  
+    text-align:left;  
+    padding-left:6px;  
+}  
+.lc_list tr:hover td em a:hover.curre{  
+    background:green;  
+}  
+/*reset css*/  
+.lc_list .details tr:hover td em,.lc_list .details tr:hover td span{  
+    background:#f6f7f5;  
+}  
+.lc_list .details tr td em,.lc_list .details tr td span{  
+    background:#f6f7f5;  
+}  
+.lc_list .details tr td em{  
+    height:auto;  
+    width:auto;  
+}  
+.lc_list .details tr td em.progressbg{  
+    background: url("../images/progressbg.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);  
+    border-radius: 3px;  
+    display: inline-block;  
+    height: 14px;  
+    margin: 0;  
+    vertical-align: middle;  
+    width: 105px;  
+    padding:0;  
+}  
+.lc_list .details tr td em.progress{  
+    background: none repeat scroll 0 0 #2697D2;  
+    border-radius: 3px;  
+    display: inline-block;  
+    height: 14px;  
+    margin: 0;  
+    vertical-align: middle;  
+    padding:0;  
+}  
+.lc_list .details tr td em.bond{  
+    background: none repeat scroll 0 0 #DDDDDD;  
+    border-radius: 3px;  
+    display: inline-block;  
+    line-height: 20px;  
+    padding: 0 5px;  
+}  
+.details tr td{  
+    padding-left:15px;  
+    border:none;  
+}  
+</style>  
+  
+</head>  
+  
+<body>  
+  
+  
+  
+                    <script type="text/javascript">  
+                    $(function(){  
+                        Details('.lc_list a');  
+                    });  
+                    function Details(obj){  
+                        $(obj).click(function(){  
+                            var detail = $(this).parent().parent().parent().next('tr').children().children('.details');  
+                            var ca = $(this);  
+                            if(detail.hasClass('down')){                                                                  
+                                $(this).removeClass('curre');  
+                                ca.parent().parent().parent().next('tr').slideUp(700);  
+                                detail.slideUp(600);  
+                                detail.removeClass('down');  
+                                detail.addClass('up');  
+                                return false;  
+                            }  
+                            if(detail.hasClass('up')){  
+                                $('.details').slideUp(600)                                                    
+                                $('.details').parent().parent().slideUp(700);  
+                                $('.details').removeClass('down');  
+                                $('.details').addClass('up');  
+                                $(obj).removeClass('curre');  
+                                $(this).addClass('curre')  
+                                ca.parent().parent().parent().next('tr').slideDown(10);   
+                                detail.slideDown(1000);  
+                                detail.removeClass('up');  
+                                detail.addClass('down');  
+                                return false;  
+                            }  
+                        });  
+                    }  
+                    </script>  
+                    <table class="lc_list" cellpadding="0" cellspacing="0">  
+                        <tr>  
+                            <th>名称</th>  
+                            <th>年化收益</th>  
+                            <th>理财金额（￥）</th>  
+                            <th>预期收益（￥）</th>  
+                            <th>到期时间</th>  
+                            <th>操作</th>  
+                        </tr>  
+                        <tr>  
+                            <td><em>四季红001期</em></td>  
+                            <td><span>11.2%</span></td>  
+                            <td><span>20,000</span></td>  
+                            <td><span>2240</span></td>  
+                            <td><span>2014-01-15</span></td>  
+                            <td><em><a href="#">详情</a></em></td>                       
+                        </tr>  
+                        <tr class="hide">  
+                            <td colspan="6">  
+                            <div class="details up">  
+                                <table width="714" border="0" cellspacing="0" cellpadding="0">  
+                                  <tr>  
+                                    <td>投资期限：<em class="gray333">12个月</em></td>  
+                                    <td>购买时间：<em class="gray333">2013-08-14 15:02:56</em></td>  
+                                    <td>获取方式：<em class="gray333">原始购买</em></td>  
+                                  </tr>  
+                                  <tr>  
+                                    <td>状态：<em class="blue">正常锁定中</em></td>  
+                                    <td>完成进度：<em class="progressbg"><em class="progress" style="width:74%;"></em></em> 74%</td>  
+                                    <td>操作：<em class="bond"><i class="flow"></i>债卷流转<i class="question"></i></em></td>  
+                                  </tr>  
+                                </table>     
+                            </div>  
+                            </td>   
+                        </tr>  
+                        <tr>  
+                            <td><em>四季红001期</em></td>  
+                            <td><span>11.2%</span></td>  
+                            <td><span>20,000</span></td>  
+                            <td><span>2240</span></td>  
+                            <td><span>2014-01-15</span></td>  
+                            <td><em><a href="#">详情</a></em></td>                       
+                        </tr>  
+                        <tr class="hide">  
+                            <td colspan="6">  
+                            <div class="details up">  
+                                <table width="714" border="0" cellspacing="0" cellpadding="0">  
+                                  <tr>  
+                                    <td>投资期限：<em class="gray333">12个月</em></td>  
+                                    <td>购买时间：<em class="gray333">2013-08-14 15:02:56</em></td>  
+                                    <td>获取方式：<em class="gray333">原始购买</em></td>  
+                                  </tr>  
+                                  <tr>  
+                                    <td>状态：<em class="blue">正常锁定中</em></td>  
+                                    <td>完成进度：<em class="progressbg"><em class="progress" style="width:74%;"></em></em> 74%</td>  
+                                    <td>操作：<em class="bond"><i class="flow"></i>债卷流转<i class="question"></i></em></td>  
+                                  </tr>  
+                                </table>     
+                            </div>  
+                            </td>   
+                        </tr>  
+                        <tr>  
+                            <td><em>四季红001期</em></td>  
+                            <td><span>11.2%</span></td>  
+                            <td><span>20,000</span></td>  
+                            <td><span>2240</span></td>  
+                            <td><span>2014-01-15</span></td>  
+                            <td><em><a href="#">详情</a></em></td>                       
+                        </tr>  
+                        <tr class="hide">  
+                            <td colspan="6">  
+                            <div class="details up">  
+                                <table width="714" border="0" cellspacing="0" cellpadding="0">  
+                                  <tr>  
+                                    <td>投资期限：<em class="gray333">12个月</em></td>  
+                                    <td>购买时间：<em class="gray333">2013-08-14 15:02:56</em></td>  
+                                    <td>获取方式：<em class="gray333">原始购买</em></td>  
+                                  </tr>  
+                                  <tr>  
+                                    <td>状态：<em class="blue">正常锁定中</em></td>  
+                                    <td>完成进度：<em class="progressbg"><em class="progress" style="width:74%;"></em></em> 74%</td>  
+                                    <td>操作：<em class="bond"><i class="flow"></i>债卷流转<i class="question"></i></em></td>  
+                                  </tr>  
+                                </table>     
+                            </div>  
+                            </td>   
+                        </tr>  
+  
+                         
+                    </table>  
+                
+  
+  
+</body>  
+</html>  
