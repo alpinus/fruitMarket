@@ -157,7 +157,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							    </thead>
 							</table>
 							<div id="contain">
-							<table border="0" id="prise_table">
+							<table border="0" id="prise_table" style="height: 400px">
 								<thead style="display: none;" >
 							      <tr>      
 							        <th style="width: 20%;text-align: center; ">品名</th>
@@ -170,78 +170,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							      </tr>
 							    </thead>
 							    <tbody >
-							      <tr class="tr1">
-							        <td>砂糖橘</td>
-							        <td>40</td>
-							        <td>70</td>
-							        <td>100</td>
-							        <td>箱装</td>
-							        <td>箱</td>
-							        <td>2018/1/20</td>			        
-							      </tr>
-							      <tr class="tr2">
-							        <td>南丰蜜桔</td>
-							        <td>1</td>
-							        <td>1.15</td>
-							        <td>1.3</td>
-							        <td>散装</td>
-							        <td>斤</td>
-							        <td>2018/1/20</td>
-							      </tr>
-							      <tr class="tr1">
-							        <td>砂糖橘</td>
-							        <td>40</td>
-							        <td>70</td>
-							        <td>100</td>
-							        <td>箱装</td>
-							        <td>箱</td>
-							        <td>2018/1/20</td>			        
-							      </tr>
-							      <tr class="tr2">
-							        <td>南丰蜜桔</td>
-							        <td>1</td>
-							        <td>1.15</td>
-							        <td>1.3</td>
-							        <td>散装</td>
-							        <td>斤</td>
-							        <td>2018/1/20</td>
-							      </tr>
-							      <tr class="tr1">
-							        <td>砂糖橘</td>
-							        <td>40</td>
-							        <td>70</td>
-							        <td>100</td>
-							        <td>箱装</td>
-							        <td>箱</td>
-							        <td>2018/1/20</td>			        
-							      </tr>
-							      <tr class="tr2">
-							        <td>南丰蜜桔</td>
-							        <td>1</td>
-							        <td>1.15</td>
-							        <td>1.3</td>
-							        <td>散装</td>
-							        <td>斤</td>
-							        <td>2018/1/20</td>
-							      </tr>
-							      <tr class="tr1">
-							        <td>砂糖橘</td>
-							        <td>40</td>
-							        <td>70</td>
-							        <td>100</td>
-							        <td>箱装</td>
-							        <td>箱</td>
-							        <td>2018/1/20</td>			        
-							      </tr>
-							      <tr class="tr2">
-							        <td>南丰蜜桔</td>
-							        <td>1</td>
-							        <td>1.15</td>
-							        <td>1.3</td>
-							        <td>散装</td>
-							        <td>斤</td>
-							        <td>2018/1/20</td>
-							      </tr>
 							    </tbody>
 							</table>
 						</div>
@@ -1118,67 +1046,79 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script src="js/SmoothScroll.min.js"></script>
 	<script type="text/javascript" src="js/move-top.js"></script>
 	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript" src="js/xml.js"></script>
 	<!-- here stars scrolling icon -->
 	<script type="text/javascript">
 		$(document).ready(function() {
-			var timer1=window.setInterval(getNextPrise,5000);  	
+			var timer1=window.setInterval(getNextPrise,3000); 
+			
+			initPriseArr();
 		});
+<<<<<<< HEAD
 
 		function getNextPrise(){
+=======
+		var priseCurrentID=0;
+		var dispNum=9;
+		var totalPriseNum;
+		var priseArr=new Array();
+		function initPriseArr(){
+			priseArr.push({name:'砂糖橘',lowPrise:'40',avgPrise:'70',highPrise:'100',package:'箱装',unit:'箱',date:'2018-1-20'});
+      priseArr.push({name:'南丰蜜桔',lowPrise:'1',avgPrise:'1.15',highPrise:'1.6',package:'散装',unit:'斤',date:'2018-1-20'});
+      priseArr.push({name:'南丰蜜桔',lowPrise:'1',avgPrise:'4',highPrise:'10',package:'散装',unit:'盒',date:'2018-1-20'});
+      priseArr.push({name:'无核蜜桔',lowPrise:'1',avgPrise:'4',highPrise:'10',package:'散装',unit:'盒',date:'2018-1-20'});
+      priseArr.push({name:'芦柑',lowPrise:'1',avgPrise:'4',highPrise:'10',package:'散装',unit:'盒',date:'2018-1-20'});
+      priseArr.push({name:'柚子',lowPrise:'1',avgPrise:'4',highPrise:'10',package:'散装',unit:'盒',date:'2018-1-20'});
+      priseArr.push({name:'柚子',lowPrise:'1',avgPrise:'4',highPrise:'10',package:'散装',unit:'盒',date:'2018-1-20'});
+      priseArr.push({name:'脐橙',lowPrise:'1',avgPrise:'4',highPrise:'10',package:'散装',unit:'盒',date:'2018-1-20'});
+      priseArr.push({name:'冰糖橙',lowPrise:'1',avgPrise:'4',highPrise:'10',package:'散装',unit:'盒',date:'2018-1-20'});
+      priseArr.push({name:'香蕉',lowPrise:'1',avgPrise:'4',highPrise:'10',package:'散装',unit:'盒',date:'2018-1-20'});
+       totalPriseNum=priseArr.length;
+			for(var i=0;i<dispNum;i++){
+				addPrise(priseCurrentID);
+        nextPrise();
+			}
+     
 			
+		}
+		function getNextPrise(){
 			//$('#prise_table tr:first').remove();
 			$('#prise_table tr:first').fadeOut(function(){
 				$(this).remove();
-				//$('#prise_table').slideUp(10000);
-				addPrise();
-
+				addPrise(priseCurrentID);
+				nextPrise();
+				
 			})
 		}
-		function addPrise(){
-			//var newPrise=window.createElement("tr");
-			// var $tr = $("<tr id=\'_tr_"+tempRow+"\' class=\'in-opt\'></tr>");
-			//$('#prise_table').tbody.appendChild(tr);
-
-
-			/*<tr class="tr1">
-							        <td>砂糖橘</td>
-							        <td>40</td>
-							        <td>70</td>
-							        <td>100</td>
-							        <td>箱装</td>
-							        <td>箱</td>
-							        <td>2018/1/20</td>			        
-							      </tr>
-
-
-			 var name = $("#name").val();
-	        var email = $("#email").val();
-	        var tel = $("#tel").val();
-	        var $tr = $("<tr>"+
-	        "<td>"+name+"</td>"+
-	        "<td>"+email+"</td>"+
-	        "<td>"+tel+"</td>"+
-	        "<td><a href='deleteEmp?id="+name+"'>删除</a></td>"
-	        +"</tr>");
-	        var $table = $("#usertable");
-	        $table.append($tr);*/
-	        var lastCls = $("#prise_table tr:last-child").attr('class');
-	        var cls="tr1";
-	        if(lastCls=="tr1"){
-	        	cls="tr2";
-	        }
-	        console.log("get a new prise"+cls);
-	        var $tr=$("<tr class='"+cls+"'>"+
-	        	"<td>"+"砂11111"+"</td>"+
-	        	"<td>"+"40"+"</td>"+
-	        	"<td>"+"70"+"</td>"+
-	        	"<td>"+"100"+"</td>"+
-	        	"<td>"+"箱装"+"</td>"+
-	        	"<td>"+"箱"+"</td>"+
-	        	"<td>"+"2018/1/20"+"</td>"+
+		function nextPrise(){
+			if(priseCurrentID>=totalPriseNum-1){
+        console.log("current sdfsdf");
+            priseCurrentID=0;
+          }else{
+            priseCurrentID++;
+          }
+		}
+		function addPrise(currentid){
+			var id=currentid;
+			var priseObj=priseArr[id];
+			//console.log(priseObj,",priseObj");
+			var lastCls = $("#prise_table tbody tr:last-child").attr('class');
+	   var cls="tr1";
+	   if(lastCls=="tr1"){
+	      	cls="tr2";
+	   }
+	        	var $tr=$("<tr class='"+cls+"'>"+
+	        	"<td>"+priseObj.name+"</td>"+
+	        	"<td>"+priseObj.lowPrise+"</td>"+
+            "<td>"+priseObj.avgPrise+"</td>"+
+	        	"<td>"+priseObj.highPrise+"</td>"+
+	        	"<td>"+priseObj.package+"</td>"+
+	        	"<td>"+priseObj.unit+"</td>"+
+	        	"<td>"+priseObj.date+"</td>"+
 	        	"</tr>");
 	        var table=$("#prise_table");
 	        table.append($tr);
+	        
 		}
 	</script>
 </body>
