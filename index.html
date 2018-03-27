@@ -169,7 +169,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							        <th style="width: 30%">发布日期</th>
 							      </tr>
 							    </thead>
-							    <tbody >
+							    <tbody style="height: 400px;">
 							    </tbody>
 							</table>
 						</div>
@@ -196,7 +196,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="entry__header">
                   <a href="#" class="entry__meta-category">公司新闻</a>
                   <h2 class="entry__title">
-                    <a href="single-post.html">定重点民生工程：工农路蔬菜果品批发市场改造提升项目奠基仪式圆满成功！</a>
+                    <a href="news/2018-2-1-1.html">定重点民生工程：工农路蔬菜果品批发市场改造提升项目奠基仪式圆满成功！</a>
                   </h2>
                   <ul class="entry__meta">
                     <li class="entry__meta-date">
@@ -1054,10 +1054,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			
 			initPriseArr();
 		});
-<<<<<<< HEAD
-
-		function getNextPrise(){
-=======
 		var priseCurrentID=0;
 		var dispNum=9;
 		var totalPriseNum;
@@ -1083,7 +1079,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		}
 		function getNextPrise(){
 			//$('#prise_table tr:first').remove();
-			$('#prise_table tr:first').fadeOut(function(){
+			$('#prise_table tr:first').fadeOut("slow",function(){
 				$(this).remove();
 				addPrise(priseCurrentID);
 				nextPrise();
