@@ -944,8 +944,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           type: "GET", //静态页用get方法，否则服务器会抛出405错误
           success: function(data){
             //var result = $(data).find("另一个html页面的指定的一部分");
-            var result = $(data);
-            $("#news-box").html(result);
+            var result=$(data);
+            var top_news=document.createElement("div"); 
+            for(var i=0;i<6;i++){
+            	var current_news=result.eq(i);
+            	top_news.append(current_news[0]);
+            }
+           // var result = $(data).eq(4);
+            $("#news-box").html(top_news);
           }
       });
 		 </script>
